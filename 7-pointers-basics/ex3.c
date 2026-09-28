@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+int sum_ints(const int* arr, size_t len) {
+    int total_sum = 0;
+    for (size_t i = 0; i < len; i++) {
+        total_sum = total_sum + arr[i];
+    }
+    return(total_sum);
+}
+
+
 int main(void) {
 
     int arr[5] = {10, 20, 30, 40, 50}; // int array with five values
@@ -16,6 +25,7 @@ int main(void) {
     // This for loop prints each element in array one by one
     printf("Loop ONE\n");
     for (size_t i = 0; i < number_of_elements; i++) { 
+        printf("%d\n", arr[i]);
     }
 
     // This for loop prints each element in array
@@ -36,5 +46,9 @@ int main(void) {
     for (size_t i = 0; i < number_of_elements; i++) {
         printf("Index: %zu, Element: %d, Memory Address: %p\n", i, p[i], (void *)&p[i]);
     }
+
+    //Function test
+    printf("Testing Sum Ints function\n");
+    printf("%d\n", sum_ints(arr, number_of_elements));
     
 }
