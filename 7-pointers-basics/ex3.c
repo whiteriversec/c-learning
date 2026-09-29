@@ -3,7 +3,7 @@
 int sum_ints(const int* arr, size_t len) {
     int total_sum = 0;
     for (size_t i = 0; i < len; i++) {
-        total_sum = total_sum + arr[i];
+        total_sum = total_sum + *(arr + i);
     }
     return(total_sum);
 }
@@ -21,6 +21,8 @@ int main(void) {
     printf("Element size: %zu bytes\n", element_size);
     printf("Size of array: %zu bytes\n", array_bytes);
     printf("Number of elements in array: %zu\n", number_of_elements);      
+    printf("arr: %p\n", (void *)arr);
+    printf("&arr[0]: %p\n", (void *)&arr[0]);
 
     // This for loop prints each element in array one by one
     printf("Loop ONE\n");
